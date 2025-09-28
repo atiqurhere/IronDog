@@ -1,34 +1,63 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowRight, Shield, Zap, Users, BarChart3, DollarSign, Gift } from 'lucide-react'
+import { 
+  ArrowRight, 
+  Shield, 
+  Zap, 
+  Users, 
+  BarChart3, 
+  DollarSign, 
+  Gift,
+  CheckCircle,
+  Star,
+  TrendingUp,
+  Globe,
+  Lock,
+  Smartphone,
+  Award,
+  Mail,
+  Phone,
+  MapPin,
+  Play
+} from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
       {/* Navigation */}
-      <nav className="border-b bg-white/80 backdrop-blur-md dark:bg-gray-900/80">
+      <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/20 backdrop-blur-lg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                  CryptoDash
+              <div className="flex-shrink-0 flex items-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg mr-3"></div>
+                <h1 className="text-xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  IronDog
                 </h1>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <Link href="/about">
-                <Button variant="ghost">About</Button>
+            <div className="hidden md:flex items-center space-x-6">
+              <Link href="#features" className="text-gray-300 hover:text-white transition-colors">
+                Features
               </Link>
-              <Link href="/pricing">
-                <Button variant="ghost">Pricing</Button>
+              <Link href="#pricing" className="text-gray-300 hover:text-white transition-colors">
+                Pricing
               </Link>
-              <Link href="/contact">
-                <Button variant="ghost">Contact</Button>
+              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                Contact
               </Link>
               <Link href="/auth">
-                <Button>Get Started</Button>
+                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0">
+                  Get Started
+                </Button>
+              </Link>
+            </div>
+            <div className="md:hidden flex items-center">
+              <Link href="/auth">
+                <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600">
+                  Start
+                </Button>
               </Link>
             </div>
           </div>
@@ -36,18 +65,32 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            The Ultimate Crypto
-            <span className="text-blue-600 dark:text-blue-400 block">
-              Mining Dashboard
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-96 h-96"></div>
+        
+        <div className="container mx-auto text-center relative z-10">
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
+            <Star className="w-4 h-4 text-yellow-400 mr-2" />
+            <span className="text-sm text-gray-300">#1 Mining Platform - Trusted by 50,000+ Users</span>
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+              The Future of
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 bg-clip-text text-transparent">
+              Cryptocurrency Mining
             </span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            Track your mining performance, manage referrals, analyze earnings, and grow your crypto portfolio with our comprehensive dashboard solution.
+          
+          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Join thousands of miners earning daily rewards with our advanced AI-powered mining platform. 
+            Start mining Bitcoin, Ethereum, and more with just one click. No hardware required.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <Link href="/auth">
               <Button size="lg" className="w-full sm:w-auto">
                 Start Mining
